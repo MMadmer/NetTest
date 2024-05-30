@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "AIController.h"
 #include "GameFramework/Character.h"
 #include "STNPC.generated.h"
 
@@ -14,8 +15,14 @@ class NETTEST_API ANTNPC : public ACharacter
 public:
 	ANTNPC(const FObjectInitializer& ObjInit);
 
-	bool GetIsFocused() const;
+	FORCEINLINE bool GetIsFocused() const;
 
 protected:
 	virtual void BeginPlay() override;
 };
+
+FORCEINLINE bool ANTNPC::GetIsFocused() const
+{
+	const auto AIController = Cast<AAIController>(Controller);
+	return AIController && IsValid(AIController->GetFocusActor());
+}

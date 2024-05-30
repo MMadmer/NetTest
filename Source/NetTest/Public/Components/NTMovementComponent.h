@@ -17,7 +17,7 @@ class NETTEST_API UNTMovementComponent : public UCharacterMovementComponent
 public:
 	UNTMovementComponent();
 
-	virtual float GetMaxSpeed() const override;
+	FORCEINLINE virtual float GetMaxSpeed() const override;
 	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
 
 	UPROPERTY(BlueprintReadWrite, Replicated)
@@ -27,5 +27,16 @@ public:
 	float RunModifier = 2.0f;
 
 	UFUNCTION(BlueprintCallable)
-	bool IsRunning() const;
+	FORCEINLINE bool IsRunning() const;
 };
+
+
+FORCEINLINE float UNTMovementComponent::GetMaxSpeed() const
+{
+	return IsRunning() ? Super::GetMaxSpeed() * RunModifier : Super::GetMaxSpeed();
+}
+
+FORCEINLINE bool UNTMovementComponent::IsRunning() const
+{
+	return bWantsToRun && !IsFalling() && Velocity.Size() > 0.0f;
+}
