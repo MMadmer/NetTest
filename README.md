@@ -16,7 +16,7 @@ To clone this repository, run the following command:
 
 Https:
 ```bash
-git clone https://github.com/MMadmer/KittyGame.git
+git clone https://github.com/MMadmer/NetTest.git
 ```
 SSH:
 ```bash
