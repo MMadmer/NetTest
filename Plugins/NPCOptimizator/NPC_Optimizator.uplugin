@@ -1,0 +1,33 @@
+{
+	"FileVersion": 3,
+	"Version": 16,
+	"VersionName": "1.5.7",
+	"FriendlyName": "NPC_Optimizator",
+	"Description": "NPC_Optimizator - automatic NPC optimization component for you game",
+	"Category": "Space Raccoon Game Studio",
+	"CreatedBy": "Space Raccoon Game Studio",
+	"CreatedByURL": "",
+	"DocsURL": "",
+	"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/1d7dbb65f6b24b2db0401a80d07e84d9",
+	"SupportURL": "support@space-raccoon.com",
+	"EngineVersion": "4.27.0",
+	"CanContainContent": false,
+	"Installed": true,
+	"Modules": [
+		{
+			"Name": "NPC_Optimizator",
+			"Type": "Runtime",
+			"LoadingPhase": "PreDefault",
+			"WhitelistPlatforms": [
+				"Win64",
+				"Mac",
+				"Linux",
+				"Android",
+				"IOS",
+				"XboxOne",
+				"PS4",
+				"Switch"
+			]
+		}
+	]
+}
